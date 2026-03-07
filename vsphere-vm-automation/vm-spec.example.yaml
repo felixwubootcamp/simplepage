@@ -1,0 +1,38 @@
+vm:
+  name: app01-prod
+  datacenter: DC1
+  cluster: Cluster-A
+  datastore: datastore01
+  folder: /Prod/Linux
+  template: ubuntu-22-04-template
+
+hardware:
+  cpu: 4
+  memory_mb: 8192
+  disks:
+    - size_gb: 60
+      thin_provision: true
+      datastore: datastore01
+    - size_gb: 100
+      thin_provision: true
+      datastore: datastore02
+
+network:
+  nics:
+    - network_name: VLAN-120-App
+      adapter_type: vmxnet3
+      ipv4:
+        mode: static
+        address: 10.120.10.21
+        prefix: 24
+        gateway: 10.120.10.1
+      dns:
+        - 10.120.1.10
+        - 10.120.1.11
+
+os:
+  type: linux
+  hostname: app01
+  domain: corp.local
+  timezone: UTC
+  customization_spec: linux-standard
