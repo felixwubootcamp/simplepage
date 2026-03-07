@@ -1,11 +1,35 @@
 # New Relic
 
-This is a starter project folder named **new relic**.
+A starter project folder for your **new relic** repository.
 
-## Next steps to publish in GitHub
+## What is included
 
-1. Create a new repository in your GitHub account (for example: `new-relic`).
-2. From this folder, initialize and push:
+- `create-github-repo.sh`: a helper script to create and push this project to your GitHub account.
+
+## Create the GitHub repository (recommended)
+
+From inside this folder, run:
+
+```bash
+bash create-github-repo.sh <your-github-username>
+```
+
+Example:
+
+```bash
+bash create-github-repo.sh felixwubootcamp
+```
+
+This will:
+
+1. Initialize a local git repository.
+2. Create an initial commit.
+3. Create a GitHub repo named `new-relic` (private by default).
+4. Push `main` to GitHub.
+
+## Manual alternative
+
+If you prefer to create the repo yourself in the GitHub UI, use:
 
 ```bash
 git init
